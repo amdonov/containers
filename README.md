@@ -11,8 +11,8 @@ Installation
  4. Install Git for Windows.
  5. Launch Git BASH and running the following
 
-> git clone git@github.com:amdonov/containers.git
-> cd containers
-> vagrant up
-> vagrant ssh
+	git clone git@github.com:amdonov/containers.git
+	cd containers
+	vagrant up
+	vagrant ssh
 
