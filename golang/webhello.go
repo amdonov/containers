@@ -12,5 +12,5 @@ func handler(w http.ResponseWriter, r *http.Request) {
 
 func main() {
     http.HandleFunc("/", handler) // redirect all urls to the handler function
-    http.ListenAndServe("0.0.0.0:8080", nil) // listen for connections at port 8080 on the local machine
+    http.ListenAndServe("0.0.0.0:8081", nil) // listen for connections at port 8081 on the local machine
 }
