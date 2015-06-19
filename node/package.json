@@ -1,0 +1,22 @@
+{
+  "name": "inventory",
+  "version": "0.0.1",
+  "description": "A basic inventory system, interfaces with mongodb",
+  "main": "inventory.js",
+  "dependencies": {
+    "mongous": "^0.2.7",
+	"body-parser": "^1.13.1",
+	"express": "^4.12.4"
+	
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "node inventory.js"
+  },
+  "keywords": [
+    "inventory",
+    "store"
+  ],
+  "author": "George Luo",
+  "license": "ISC"
+}
