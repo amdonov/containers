@@ -1,0 +1,40 @@
+[
+	{
+		title: "Titanic",
+		artist: "James Horner",
+		length: "72",
+		songlist: [
+			{
+				title: "Never An Absolution",
+				length: "3:03"
+			},
+			{
+				title: "My Heart Will Go On",
+				length: "5:11",
+				supportingartists: ["Celine Dion", "Will Jennings"]
+			}
+		],
+		genre: "soundtrack",
+		releasedate: "1997",
+		mediatype: "album",
+		stock: 12
+	},
+	{
+		title: "Futility, or the Wreck of the Titan",
+		author: "Morgan Robertson",
+		pages: "150",
+		genre: "drama",
+		mediatype: "novel",
+		stock: 43
+	},
+	{
+		title: "Titanic",
+		director: "James Cameron",
+		length: "194",
+		leadactors: ["Leonardo Dicaprio","Kate Winslet","Billy Zane","Kathy Bates"],
+		genre: "drama",
+		releasedate: "1997",
+		mediatype: "film",
+		stock: 32
+	}
+]
