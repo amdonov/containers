@@ -12,7 +12,7 @@ Installation
  5. Launch Git BASH and running the following
 
 ```
-git clone git@github.com:amdonov/containers.git
+git clone https://github.com/amdonov/containers.git
 cd containers
 vagrant up
 vagrant ssh
