@@ -1,0 +1,94 @@
+### Documentation for Kubernetes with Docker
+### Uses Vagrant inside a Virtual Machine
+### Booz Allen Hamilton
+### Written by Felix Cao, George Luo, Kevin Wu
+### Updated July 2015
+
+
+===1. INSTALL AND SET UP VB AND VAGRANT====================================
+Run these in command line
+	 git clone https://github.com/amdonov/containers.git
+	 cd containers
+	 vagrant up
+	 vagrant ssh
+
+===2. CREATE A SERVICE===============================================
+You can download services from https://github.com/amdonov/containers/
+
+Use "currency" for the simplest service
+
+===3.TEST YOUR SERVICE IN A CONTAINER=====================================
+cd into the folder with service (cd /vagrant/)
+	 docker built -t "name_of_app" .
+	 docker run --name "instance_name" -d -p 192.168.56.30:80:8080
+
+If you need to delete your images,
+	 docker stop $(docker ps -qa)
+	 docker rm $(docker ps -q -q)
+	 docker rmi $(docker images -q)
+
+===4. SET UP KUBERNETES==============================================
+Following these instructions:
+http://www.severalnines.com/blog/installing-kubernetes-cluster-minions-centos7-manage-pods-services
+
+Instead of installing kubernetes in step 1 for master and minion, do the following steps:
+	 yum install -y http://cbs.centos.org/kojifiles/work/tasks/5142/15142/kubernetes-node-0.19.0-0.4.gita8269e3.el7.x86_64.rpm
+	 yum install -y http://cbs.centos.org/kojifiles/work/tasks/5142/15142/kubernetes-master-0.19.0-0.4.gita8269e3.el7.x86_64.rpm
+	 yum install -y http://cbs.centos.org/kojifiles/work/tasks/5142/15142/kubernetes-0.19.0-0.4.gita8269e3.el7.x86_64.rpm
+
+===5. LINK DOCKER AND GITHUB=============================================
+Push you your service to git
+
+Set up an Automated Build Repository, link your git
+
+Wait for build to finish
+
+===6. START MASTER AND MINIONS========================================
+Start Master first, then the Minions from the website instructions.
+If there are errors, run this line:
+	 sudo systemctl start etcd
+	 
+Run line:
+	 etcdctl mk /coreos.com/network/config '{"Network":"172.17.0.0/16"}'
+
+*******************Diagnostics****************************************
+Returns the minons and the state of the minions
+	 kubctl get nodes
+Returns the pods created and their state
+	 kubctl get pods
+Returns the services running and the 10-dot-IP address at the server
+	 kubectl get services
+Returns the replica controllers create by kubernetes
+	 kubectl get rc
+Returns performance/environment information
+	 kubectl describe [typeofobject] [nameofobject]
+************************************************************************
+
+===7. CREATE A REPLICATION CONTROLLER MANUALLY==================================
+Creates a replica controller that guarantees three running instances of the indicated image 
+	 kubectl run-container [nameofcontainer] --image=[dockerlocation] --replicas=3 --port=[####]
+
+&&Example
+	 kubectl run-container currency1 --image=kevinkwu/currency --replicas=3 --port=8080
+
+Wait for pods to pull from docker
+
+	 kubectl expose rc [nameofcontainer] --port=[##] --target-port=[####] --public-ip=192.168.50.131
+
+&&Example 
+	 kubectl expose rc currency1 --port=81 --target-port=8080 --public-ip=192.168.50.131
+
+*****How do delete all pods*****
+	 kubectl delete pods --all
+	 kubectl stop rc --all
+*********************************
+
+If you made a json file
+	 kubectl create -f [nameoffile].json
+	 
+====8. TEST THE WEBSITE USING THE IP ADDRESS========================================
+
+With a port number:
+	 192.168.50.131:portnumber/[service]/
+Without a port number:
+	 192.168.50.131//[service]/
