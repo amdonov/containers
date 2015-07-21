@@ -58,10 +58,9 @@ You need to create two separate folders, with one titled "master" and the other 
 You may use the master and minion folder from GitHub; if you do so, the following steps are done automatically when you vagrant up, so proceed to step 5.
 
 Follow these instructions:
-```
+
 http://www.severalnines.com/blog/installing-kubernetes-cluster-minions-centos7-manage-pods-services
 
-```
 Instead of installing kubernetes in step 1 for master and minion, do the following steps for each:
 ```
 yum install -y http://cbs.centos.org/kojifiles/work/tasks/5142/15142/kubernetes-node-0.19.0-0.4.gita8269e3.el7.x86_64.rpm
@@ -119,14 +118,14 @@ kubectl describe [typeofobject] [nameofobject]
 ## 7. Create a Replication Controller Manually
 Creates a replica controller that guarantees three running instances of the indicated image. The second line is an example code:
 ```
-kubectl run-container [nameofcontainer] --image=[dockerlocation] --replicas=3 --port=[####]
+kubectl run-container [containername] --image=[dockerlocation] --replicas=3 --port=[####]
 kubectl run-container currency1 --image=kevinkwu/currency --replicas=3 --port=8080
 ```
 Wait for pods to pull from docker. You can check the status using the diagnostics for the pods (kubectl get pods).
 
 Once they complete:
 ```
-kubectl expose rc [nameofcontainer] --port=[##] --target-port=[####] --public-ip=192.168.50.131 
+kubectl expose rc [containername] --port=[##] --target-port=[####] --public-ip=192.168.50.131 
 kubectl expose rc currency1 --port=81 --target-port=8080 --public-ip=192.168.50.131
 ```
 
