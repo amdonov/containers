@@ -1,4 +1,6 @@
 package main
+//need to add /remove
+//and a implementer for catching errors
 
 import (
 	"database/sql"							//used for unifrom database access
@@ -9,7 +11,7 @@ import (
 )
 
 func SetupDB() *sql.DB {
-	db, err := sql.Open("postgres", "user=felix password=1 dbname=custinfo sslmode=disable") 		//my only lib/pq usage? login into postgres database
+	db, err := sql.Open("postgres", "host=192.168.56.40 user=postgres password=1 dbname=postgres sslmode=disable") 		//my only lib/pq usage? login into postgres database
 	PanicIf(err)
 
 	return db
@@ -60,7 +62,10 @@ func InsertPur(r *http.Request, db *sql.DB){
 func main() {
 	m := martini.Classic()
 	m.Map(SetupDB())
-	m.Get("/", ShowDB)
+	m.Get("/", func() string {
+    return "Hello world!"
+  })
+	m.Get("/show", ShowDB)
 	m.Post("/add", InsertPur)
 	m.Run()
 }

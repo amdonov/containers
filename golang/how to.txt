@@ -1,0 +1,13 @@
+docker build -t relearninggo .
+docker run -d --name testrmgo -p 192.168.56.30:80:8081 relearninggo 
+
+
+
+Command to build and run a go program 
+
+
+
+docker run -d --name tutapp3 -p 192.168.56.10:80:3000 --link mydb:postgres goapp 
+
+
+docker run -p 192.168.56.40:5432:5432 –name db -e POSTGRES_PASSWORD=1 -d postgres

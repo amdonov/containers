@@ -1,2 +1,7 @@
 .vagrant/
 target/
+PostgresDocker/
+GoLangTest/
+test/
+kernel-devel-3.10.0-229.4.2.el7.x86_64.rpm
+dockerize-tutorial/

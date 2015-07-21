@@ -17,6 +17,7 @@ Vagrant.configure(2) do |config|
   config.vm.network "private_network", ip: "192.168.56.10"
   config.vm.network "private_network", ip: "192.168.56.20"
   config.vm.network "private_network", ip: "192.168.56.30"
+  config.vm.network "private_network", ip: "192.168.56.40"
   
   # Avoid problems with Booz Allen Web Gateway
   config.vm.box_download_insecure = true
@@ -61,5 +62,6 @@ EOF
 	 sudo update-ca-trust
 	 sudo systemctl enable docker
 	 sudo systemctl start docker
+	 sudo -s
    SHELL
 end
