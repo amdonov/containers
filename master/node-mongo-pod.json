@@ -1,0 +1,32 @@
+{
+  "kind": "Pod",
+  "apiVersion": "v1",
+  "metadata": {
+    "name": "node-mongo",
+    "labels": {
+      "app": "node-mongo"
+    }
+  },
+  "spec": {
+    "containers": [
+      {
+        "name": "mongodb",
+        "image": "georgeluo/mongodb",
+        "ports": [
+          {
+            "containerPort": 27017
+          }
+        ]
+      },
+      {
+        "name": "node",
+        "image": "georgeluo/node",
+        "ports": [
+          {
+            "containerPort": 1337
+          }
+        ]
+      }
+    ]
+  }
+}
