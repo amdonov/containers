@@ -147,7 +147,6 @@ With a port number:
 ```
 192.168.50.131:portnumber/[service]
 ```
-```
 
 Without a port number:
 ```
