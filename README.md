@@ -76,20 +76,23 @@ Set up an Automated Build Repository, link your git.
 Wait for build to finish.
 
 ## 6. Start Master and Minions
+```
+sudo -s
+cd /vagrant/ 
+```
+
 Start Master first, then the Minions from the website instructions.
 
 If there are errors (normally on minion), run this line:
 ```
 sudo systemctl start etcd
 ```
-
-Reboot your master and minion and start them again from website instructions.
+If there are any problems in later steps, rebooting helps solve most problems as follows:
 ```
 sudo poweroff
 vagrant up
 vagrant ssh
 ```
-If there are any problems in later steps, rebooting helps solve most problems.
 
 
 ##### Diagnostics
@@ -118,14 +121,14 @@ kubectl describe [typeofobject] [nameofobject]
 ## 7. Create a Replication Controller Manually
 Creates a replica controller that guarantees three running instances of the indicated image. The second line is an example code:
 ```
-kubectl run-container [containername] --image=[dockerlocation] --replicas=3 --port=[####]
+kubectl run-container [container] --image=[dockerlocation] --replicas=3 --port=[####]
 kubectl run-container currency1 --image=kevinkwu/currency --replicas=3 --port=8080
 ```
 Wait for pods to pull from docker. You can check the status using the diagnostics for the pods (kubectl get pods).
 
 Once they complete:
 ```
-kubectl expose rc [containername] --port=[##] --target-port=[####] --public-ip=192.168.50.131 
+kubectl expose rc [container] --port=[##] --target-port=[####] --public-ip=192.168.50.131 
 kubectl expose rc currency1 --port=81 --target-port=8080 --public-ip=192.168.50.131
 ```
 
@@ -144,10 +147,15 @@ Enter the addresses into a browser.
 
 With a port number:
 ```
-192.168.50.131:portnumber/[service]
+192.168.50.131:port/[service]
 ```
 
 Without a port number:
 ```
 192.168.50.131/[service]
+```
+
+Example:
+```
+192.168.50.131:81/converter/YD/123
 ```
