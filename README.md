@@ -4,7 +4,7 @@ Kubernetes and Docker were utilized in conjunction with Vagrant.
 
 * Written by Felix Cao, George Luo, Kevin Wu
 * Booz Allen Hamilton
-* Updated July 2015
+* Updated Aug 2015
 
 ## 1. Installation
 
