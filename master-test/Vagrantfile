@@ -70,6 +70,5 @@ EOF
 	 sudo cp -f /vagrant/etcd.conf /etc/etcd/etcd.conf
 	 sudo cp -f /vagrant/apiserver /etc/kubernetes/apiserver
 	 sudo cp -f /vagrant/controller-manager /etc/kubernetes/controller-manager
-	 
   SHELL
 end

@@ -64,6 +64,7 @@ EOF
 	 sudo systemctl enable ntpd
 	 sudo yum install -y nano
 	 sudo yum install -y etcd
+	 sudo yum install -y flannel
 	 sudo yum install -y http://cbs.centos.org/kojifiles/work/tasks/5142/15142/kubernetes-node-0.19.0-0.4.gita8269e3.el7.x86_64.rpm
 	 sudo yum install -y http://cbs.centos.org/kojifiles/work/tasks/5142/15142/kubernetes-master-0.19.0-0.4.gita8269e3.el7.x86_64.rpm
 	 sudo yum install -y http://cbs.centos.org/kojifiles/work/tasks/5142/15142/kubernetes-0.19.0-0.4.gita8269e3.el7.x86_64.rpm
