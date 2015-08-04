@@ -1,0 +1,37 @@
+{
+   "kind":"ReplicationController",
+   "apiVersion":"v1",
+   "metadata":{
+      "name":"golang",
+      "labels":{
+         "name":"golang"
+      }
+   },
+   "spec":{
+      "replicas":1,
+      "selector":{
+         "name":"golang"
+      },
+      "template":{
+         "metadata":{
+            "labels":{
+               "name":"golang"
+            }
+         },
+         "spec":{
+            "containers":[
+               {
+                  "name":"golang",
+                  "image":"felixcao/gosql",
+                  "ports":[
+                     {
+                        "containerPort":3000,
+                        "protocol":"TCP"
+                     }
+                  ]
+               }
+            ]
+         }
+      }
+   }
+}

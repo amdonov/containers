@@ -16,10 +16,13 @@ INSERT INTO custauth VALUES (2, 'Lisa', 'Smith', 'Little Rock', 'Arkanas', 'USA'
 INSERT INTO custauth VALUES (3, 'Tom', 'Richardson', 'Virginia Beach', 'Virginia', 'USA', 'lasersharks@gmail.com', '$342.34', 0);
 INSERT INTO custauth VALUES (4, 'Sean', 'Cruz', 'Durham', 'North Carolina', 'USA', 'SeanCruz@gmail.com', '$34.23', 0);
 INSERT INTO custauth VALUES (5, 'Nick', 'Beacker', 'San Francisco', 'California', 'USA', 'B_Nick@gmail.com', '$2,324.33', 0);
-INSERT INTO custauth VALUES (6, 'Haoyi', 'Chen', 'Beijing', 'missing', 'China', 'forigenuser@beibei.com', '$9,999.99', 0);
+INSERT INTO custauth VALUES (6, 'Haoyi', 'Chen', 'Beijing', 'missing', 'China', 'foreignuser@beibei.com', '$9,999.99', 0);
 
 
 
 
 ALTER TABLE ONLY custauth
     ADD CONSTRAINT custauth_pkey PRIMARY KEY (custid);
+    
+ALTER TABLE custauth
+  OWNER TO docker;
