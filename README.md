@@ -8,8 +8,8 @@ Kubernetes and Docker were utilized in conjunction with Vagrant.
  
 
 Additional Resources
-* [felixcao/GoSQL](https://github.com/FelixCao/GoSQL)
-* [felixcao/dockerSQL](https://github.com/FelixCao/DockerSQL)
+* [GoSQL](https://github.com/FelixCao/GoSQL)
+* [DockerSQL](https://github.com/FelixCao/DockerSQL)
 
 ## 1. Installation
 
