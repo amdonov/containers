@@ -5,11 +5,11 @@ Kubernetes and Docker were utilized in conjunction with Vagrant.
 * Written by Felix Cao, George Luo, Kevin Wu
 * Booz Allen Hamilton
 * Updated Aug 2015
-* 
+ 
 
 Additional Resources
-*[felixcao/GoSQL](https://github.com/FelixCao/GoSQL)
-*[felixcao/dockerSQL](https://github.com/FelixCao/DockerSQL)
+* [felixcao/GoSQL](https://github.com/FelixCao/GoSQL)
+* [felixcao/dockerSQL](https://github.com/FelixCao/DockerSQL)
 
 ## 1. Installation
 
