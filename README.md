@@ -5,6 +5,11 @@ Kubernetes and Docker were utilized in conjunction with Vagrant.
 * Written by Felix Cao, George Luo, Kevin Wu
 * Booz Allen Hamilton
 * Updated Aug 2015
+ 
+
+Additional Resources
+* [GoSQL](https://github.com/FelixCao/GoSQL)
+* [DockerSQL](https://github.com/FelixCao/DockerSQL)
 
 ## 1. Installation
 
@@ -27,7 +32,7 @@ vagrant ssh
 
 
 ## 2. Create a Service
-You can pull services from https://github.com/amdonov/containers/
+You can pull services from [amdonov/containers](https://github.com/amdonov/containers/)
 
 Use "currency" for the simplest service
 
@@ -57,9 +62,7 @@ You need to create two separate folders, with one titled "master" and the other 
 
 You may use the master and minion folder from GitHub; if you do so, the following steps are done automatically when you vagrant up, so proceed to step 5.
 
-Follow these instructions:
-
-http://www.severalnines.com/blog/installing-kubernetes-cluster-minions-centos7-manage-pods-services
+Follow these [instructions](http://www.severalnines.com/blog/installing-kubernetes-cluster-minions-centos7-manage-pods-services)
 
 Instead of installing kubernetes in step 1 for master and minion, do the following steps for each:
 ```

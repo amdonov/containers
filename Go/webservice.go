@@ -1,3 +1,11 @@
+/*************************************
+*
+*OUTDATED, kept here for records
+*Should work for docker (might need to change host)but have some compatibility issues with Openshift/Kubernetes 
+*For up to date version go here https://github.com/FelixCao/GoSQL
+*
+*****************************************/
+
 package main
 //need to add /remove
 //and a implementer for catching errors
