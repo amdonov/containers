@@ -1,6 +1,9 @@
 package eu.kielczewski.example.config;
 import javax.validation.constraints.NotNull;
-
+/**
+ * MessagesConfiguration.java
+ * This class accesses the hello in the yml and is called upon by ExampleServiceConfiguration
+ */
 public class MessagesConfiguration {
 
     @NotNull

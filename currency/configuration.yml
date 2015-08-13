@@ -1,2 +1,5 @@
+# configuration.yml
+# This is the yml file that was originally used to say "Hello world1"
+# Changed so that the original code format was intact but now is more relevant to the project.
 messages:
   hello: This is a currency conversion calculator.

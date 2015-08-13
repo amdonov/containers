@@ -7,7 +7,11 @@ import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
 import java.text.DecimalFormat;
 
-
+/**
+ * HelloResource.java
+ * Manipulated by the @GETS
+ * This is where the currency calculations are
+ */
 @Path(value = "/converter")
 public class HelloResource {
 
@@ -22,12 +26,19 @@ public class HelloResource {
         return conf.getHello();
     }
 
+    /**
+     * Read Me Section
+     */
     @GET
     @Path("readme")
     public String readMe(){
         return "Supports: Dollars, Yuan, Euros";
     }
 
+    /**
+     * Dollars to Yuan
+     * @param number
+     */
     @GET
     @Path("DY/{number}")
     public String dollarToYuan(@PathParam("number") final String number) {
@@ -44,6 +55,10 @@ public class HelloResource {
         }
     }
 
+    /**
+     * Yuan to Dollar
+     * @param number
+     */
     @GET
     @Path("YD/{number}")
     public String yuanToDollar(@PathParam("number") final String number) {
@@ -60,6 +75,10 @@ public class HelloResource {
         }
     }
 
+    /**
+     * Euros to Dollar
+     * @param number
+     */
     @GET
     @Path("ED/{number}")
     public String euroToDollar(@PathParam("number") final String number) {
@@ -76,6 +95,10 @@ public class HelloResource {
         }
     }
 
+    /**
+     * Dollar to Euro
+     * @param number
+     */
     @GET
     @Path("DE/{number}")
     public String dollarToEuro(@PathParam("number") final String number) {
@@ -92,6 +115,10 @@ public class HelloResource {
         }
     }
 
+    /**
+     * Yuan to Euros
+     * @param number
+     */
     @GET
     @Path("YE/{number}")
     public String yuanToEuro(@PathParam("number") final String number) {
@@ -107,6 +134,11 @@ public class HelloResource {
             return "\""+ number + "\" is not a number!";
         }
     }
+
+    /**
+     * Euros to Yuan
+     * @param number
+     */
 
     @GET
     @Path("EY/{number}")

@@ -4,7 +4,11 @@ import com.yammer.dropwizard.Service;
 import com.yammer.dropwizard.config.Bootstrap;
 import com.yammer.dropwizard.config.Environment;
 import eu.kielczewski.example.hello.HelloResource;
-
+/**
+ * ExampleService.java
+ * Represents the main service; extends the general service class
+ * Overrides initialize and run
+ */
 public class ExampleService extends Service<ExampleServiceConfiguration> {
 
     public static void main(String[] args) throws Exception {
