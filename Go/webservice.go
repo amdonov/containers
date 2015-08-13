@@ -1,7 +1,7 @@
 /*************************************
 *
 *OUTDATED, kept here for records
-*Should for docker but have some compatibility issues with Openshift/Kubernetes 
+*Should work for docker (might need to change host)but have some compatibility issues with Openshift/Kubernetes 
 *For up to date version go here https://github.com/FelixCao/GoSQL
 *
 *****************************************/
