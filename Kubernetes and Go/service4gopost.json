@@ -1,0 +1,23 @@
+{
+   "kind":"Service",
+   "apiVersion":"v1",
+   "metadata":{
+      "name":"postgresdb",
+      "labels":{
+         "name":"postgresdb"
+      }
+   },
+   "spec":{
+      "ports": [
+        {
+          "port":5432,
+          "targetPort":5432, 
+          "protocol":"TCP"
+        }
+      ],
+      "selector":{
+    
+		 "name":"postgresdb"
+      }
+   }
+}

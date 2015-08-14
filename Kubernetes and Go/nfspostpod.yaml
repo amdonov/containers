@@ -1,0 +1,37 @@
+#
+# This pod imports nfs-server.default.kube.local:/ into /usr/share/nginx/html
+#
+
+apiVersion: v1
+kind: ReplicationController
+metadata:
+  name: postgresdb
+  labels:
+    name: postgresdb
+spec:
+    replicas: 1
+    selector:
+        name: postgresdb
+    template:
+        metadata:
+            labels:
+                name: postgresdb
+        spec:
+          containers:
+            - name: postgresdb
+              image: postgres
+              ports:
+                - name: postgresdb
+                  containerPort: 5432
+                  protocol: TCP
+              volumeMounts:
+                  # name must match the volume name below
+                  - name: nfs-server
+                    mountPath: "/docker-entrypoint-initdb.d"
+          volumes:
+            - name: nfs-server
+              nfs:
+                # FIXME: use the right hostname
+                server: 10.254.44.78
+                path: "/"
+        #        readOnly: false

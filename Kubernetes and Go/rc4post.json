@@ -1,0 +1,37 @@
+{
+   "kind":"ReplicationController",
+   "apiVersion":"v1",
+   "metadata":{
+      "name":"postgresdb",
+      "labels":{
+         "name":"postgresdb"
+      }
+   },
+   "spec":{
+      "replicas":1,
+      "selector":{
+         "name":"postgresdb"
+      },
+      "template":{
+         "metadata":{
+            "labels":{
+               "name":"postgresdb"
+            }
+         },
+         "spec":{
+            "containers":[
+               {
+                  "name":"postgresdb",
+                  "image":"felixcao/dockersql",
+                  "ports":[
+                     {
+                        "containerPort":5432,
+                        "protocol":"TCP"
+                     }
+                  ]
+               }
+            ]
+         }
+      }
+   }
+}

@@ -1,0 +1,63 @@
+kubectl expose pod inventory1-bp9g4 --port=80 --target-port=1337 --public-ip=192.168.50.131
+
+
+
+#running george's service
+kubectl run-container inventory1 --image=georgeluo/node --replicas=3 --port=1337
+
+
+
+kubectl create -f node-mongo-pod.json
+kubectl expose pods node-mongo --port=80 --target-port=1337 --public-ip=192.168.50.131
+
+
+
+
+kubectl get pods
+kubectl get nodes
+kubectl get services
+kubectl get rc
+
+ 
+kubectl delete services --all
+kubectl stop rc --all
+kubectl delete pods --all
+
+
+kubectl create -f rc4post.json
+kubectl create -f service4gopost.json
+kubectl create -f rc4go.json
+
+
+kubectl create -f nfsPod.yaml
+kubectl create -f nfsService.yaml
+kubectl create -f nfspostpod.yaml
+
+
+
+kubectl stop -f examples/guestbook/frontend-controller.json
+kubectl delete -f examples/guestbook/redis-master-service.json
+
+
+
+ 
+kubectl expose rc gogo --port=80 --target-port=3000 --public-ip=192.168.50.131
+
+kubectl run gogo --image=felixcao/gosql --replicas=3 --port=3000 
+kubectl run-container gogo --image=felixcao/gosql --replicas=3 --port=3000 
+
+kubectl run gogo --image=felixcao/gosql --replicas=3 --port=3000 
+kubectl run sqldb --image=postgres --replicas=3 --port=5432 
+
+kubectl expose rc gogo --port=80 --target-port=3000 --public-ip=192.168.50.131
+kubectl expose rc sqldb --port=5432 --target-port=5432 --public-ip=192.168.50.131
+
+
+
+kubectl run-container inventory1 --image=georgeluo/node --replicas=3 --port=1337
+kubectl create -f node-mongo-pod.json
+kubectl expose pods node-mongo --port=80 --target-port=1337 --public-ip=192.168.50.131
+
+
+kubectl expose rc golang --port=80 --target-port=3000 --public-ip=192.168.50.131
+kubectl expose rc postgres --port=5432 --target-port=5432 --public-ip=192.168.60.131
