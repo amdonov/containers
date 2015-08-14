@@ -12,35 +12,29 @@ kubectl expose pods node-mongo --port=80 --target-port=1337 --public-ip=192.168.
 
 
 
-
+//Displays Info
 kubectl get pods
 kubectl get nodes
 kubectl get services
 kubectl get rc
 
- 
+//Removes all 
 kubectl delete services --all
 kubectl stop rc --all
 kubectl delete pods --all
 
-
+//Start Golang
 kubectl create -f rc4post.json
 kubectl create -f service4gopost.json
 kubectl create -f rc4go.json
 
-
+//Start NFS 
 kubectl create -f nfsPod.yaml
 kubectl create -f nfsService.yaml
 kubectl create -f nfspostpod.yaml
 
 
 
-kubectl stop -f examples/guestbook/frontend-controller.json
-kubectl delete -f examples/guestbook/redis-master-service.json
-
-
-
- 
 kubectl expose rc gogo --port=80 --target-port=3000 --public-ip=192.168.50.131
 
 kubectl run gogo --image=felixcao/gosql --replicas=3 --port=3000 
